@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useFetch } from "./hooks/useFetch";
 
 type Repositories = {
@@ -6,10 +7,12 @@ type Repositories = {
 }
 
 function App() {
-  const { data : respositories } = useFetch<Repositories[]>('https://api.github.com/users/leorejwan/repos');
-  
+  const { data : respositories, isFetching } = 
+    useFetch<Repositories[]>('https://api.github.com/users/leorejwan/repos');
+
   return (
     <ul>
+      { isFetching && <p>Carregando...</p> }
       {respositories?.map(repo => {
         return(
           <li key={repo.full_name}>
