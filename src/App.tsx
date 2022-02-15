@@ -11,7 +11,8 @@ function App() {
     const response = await axios.get('https://api.github.com/users/leorejwan/repos')
     
     return response.data;
-  
+  }, {
+    refetchOnWindowFocus: false
   });
 
   return (
