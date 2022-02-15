@@ -8,7 +8,7 @@ type Repositories = {
 
 function App() {
   const { data : respositories, error, isFetching } = 
-    useFetch<Repositories[]>('https://api.github.com/users/leorejwan/repo');
+    useFetch<Repositories[]>('https://api.github.com/users/leorejwan/repos');
 
   return (
     <ul>
