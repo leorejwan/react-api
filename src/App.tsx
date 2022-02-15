@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useFetch } from "./hooks/useFetch";
 
 type Repositories = {
@@ -8,7 +7,7 @@ type Repositories = {
 
 function App() {
   const { data : respositories, error, isFetching } = 
-    useFetch<Repositories[]>('https://api.github.com/users/leorejwan/repos');
+    useFetch<Repositories[]>('users/leorejwan/repos');
 
   return (
     <ul>
