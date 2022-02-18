@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 type Repositories = {
   full_name: string;
@@ -22,7 +23,9 @@ export function Repos() {
       {data?.map(repo => {
         return(
           <li key={repo.full_name}>
-            <strong>{repo.full_name}</strong>
+            <Link to={`repos/${repo.full_name}`}>
+                {repo.full_name}
+            </Link>
             <p>{repo.description}</p>
           </li>
         )
